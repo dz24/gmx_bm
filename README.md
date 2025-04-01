@@ -20,12 +20,12 @@ in the following pbs submission script,
 # load gromacs
 ml gromacs/2024.5-gcc-impi
 
+# cd in working directory
+cd ${PBS_O_WORKDIR}
+
 # specify files to be ran
 script=path/to/gmx_bm.py
 tpr=path/to/tpr/file
-
-# cd in working directory
-cd ${PBS_O_WORKDIR}
 
 # run the gmx python gmx_bm.py script
 python3 $script $tpr
