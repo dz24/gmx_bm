@@ -22,12 +22,12 @@ logging.basicConfig(
 # load gromacs
 ml gromacs/2024.5-gcc-impi
 
-# specify files to be ran
-script=/home/zhang/bm/gmx_bm.py
-tpr=path_to_tpr_file
-
 # cd in working directory
 cd ${PBS_O_WORKDIR}
+
+# specify files to be ran
+script=path/to/gmx_bm.py
+tpr=path/to/tpr/file
 
 # run the gmx python gmx_bm.py script
 python3 $script $tpr
