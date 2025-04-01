@@ -60,10 +60,10 @@ def create_ff(inp: str, ff: str):
         else:
             if ff == "folder":
                 os.makedirs(create)
-                logging.info(f"Benchmarking will occur in {create}!")
+                logging.info(f"Benchmarking will occur in {create}")
             else:
                 open(create, "a").close()
-                logging.info(f"Results will be saved in {create}!\n")
+                logging.info(f"Results will be saved in {create}\n")
             break
 
     if trial == 999:
@@ -81,7 +81,7 @@ def gmx_bm(tpr: str, nsteps: int = 20000):
     assert tpr[-4:] == ".tpr"
     assert os.path.exists(tpr)
     tpr_g = os.path.abspath(tpr)
-    logging.info(f"Using {tpr_g} for benchmarking!")
+    logging.info(f"Using {tpr_g} for benchmarking")
     cwd = os.getcwd()
 
     # create file folder and cd
@@ -147,9 +147,9 @@ def gmx_bm(tpr: str, nsteps: int = 20000):
             f"Total performance for {p} parallels: {np.sum(perfs[i]):.04f} ns/day\n"
         )
 
-    logging.info(f"Done simulating in {bm_folder}!")
+    logging.info(f"Done simulating in {bm_folder}")
     np.savetxt(bm_results, np.array([parallels, perfs]).T, header="parallels\tns/day")
-    logging.info(f"Results should be in {bm_results}!")
+    logging.info(f"Results should be in {bm_results}")
 
 
 gmx_bm(sys.argv[1])
