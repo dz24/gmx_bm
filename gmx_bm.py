@@ -2,10 +2,8 @@ import os
 import shutil
 import subprocess
 import sys
-
-import numpy as np
-
 import logging
+import numpy as np
 
 logging.basicConfig(
     filename="benchmark.log", level=logging.INFO, filemode="a", format="%(message)s"
