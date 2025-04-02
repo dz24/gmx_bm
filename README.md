@@ -33,6 +33,10 @@ python3 $script $tpr
 
 #### BM results
 
+<p align="center">
+  <img src="data/nsday.png" width="500" title="hover text">
+</p>
+
 | Atoms/Parallels [ns/day] | 1        | 2        | 4         | 6         | 8         | 18        |
 |-----------------|----------|----------|-----------|-----------|-----------|-----------|
 | 32.4K           | 493.2    | 850.8    | 1232.2    | 1580.5    | 1726.3    | 2128.4    |
