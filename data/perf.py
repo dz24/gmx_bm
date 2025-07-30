@@ -5,8 +5,8 @@ import scienceplots
 plt.style.use('science')
 
 
-tprs = ["30k", "70k", "100k"]
-atms = [32351, 68895, 101240]
+tprs = ["17k", "30k", "70k", "100k"]
+atms = [17691, 32351, 68895, 101240]
 trials = 5
 
 
@@ -23,11 +23,11 @@ for idx, (tpr, atm) in enumerate(zip(tprs, atms)):
 	plt.scatter(data[:, 0], avg, color=COLS[idx], label=f"{atms[idx]/1000:.01f}k AT")
 	plt.fill_between(data[:, 0], avg - std, avg + std, color=COLS[idx], alpha=0.5)
 
-plt.legend(frameon=False, prop={'size': 7})
+# plt.legend(frameon=False, prop={'size': 7}, )
+plt.legend(bbox_to_anchor=(-0.15, 1.02, 1, 0.2), loc="lower left", mode="expand", borderaxespad=0, fontsize=8, ncols=2)
 plt.xticks(data[:, 0])
 plt.minorticks_off()
 plt.xlabel("Parallel simulations")
 plt.ylabel("Total ns/day")
-plt.savefig('nsday.png', dpi=300)
-
-
+# plt.show()
+plt.savefig('nsday.pdf')
